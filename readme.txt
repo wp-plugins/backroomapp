@@ -1,4 +1,4 @@
-=== Backroomapp : Chat privately with your friends on any Content ===
+=== Backroomapp : Enable private sharing and chatting over your Wordpress blog ===
 Contributors: backroomapp
 Tags: chats, community, backroomapp, share
 Requires at least: 3.0
@@ -6,11 +6,13 @@ Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
 
-Backroomapp is a content messenger. Chat privately with your friends right from the content you read and watch.
+Backroomapp is a content messenger. It allows readers of your blog to share and chat privately with their friends right from the content.
 
 == Description ==
 
-Backroomapp is your content messenger. Chat privately with your friends right from the content you read and watch. This Wordpress plugin enables the content messenging onto a Wordpress blog, enabling private sharing for the Wordpress blog posts. This way the blog gets shared more and sees increase in traffic in addition to community building.
+Readers share content privately more than they do social sharing. And yet there is no quick and simple way of making it easy for the users a private sharing feature. Right now these private sharing happens via emails, Skype and other messaging platform which require multiple clicks and several hoops to jump through. 
+
+Backroomapp solves these problems both for the publisher and the user. This plugin will install Backroom widget which will enable Backroom messenger right from the blog post. Users can now build their private communities. This way the blog posts gets shared more and sees increase in traffic in addition to community building.
 
 == Installation ==
 
@@ -20,34 +22,19 @@ This WordPress widget is easy to install:
 
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 
-3. Go to the Appearance -> widget screen, drag the widget to a sidebar, and fill out the necessary fields and options.
+3. Now is the step where you will place the widget on the blog post page. We recommend to place this widget right below where the post ends - which is above public sharing.
 
-Alternatively, if you did step 1 and 2 you can insert a version without a widget too (see below):
+4. So, go to your Appearance -> Editor and open Single Post (single.php) file which is associated with an individual post.
 
-= With shortcode =
+Paste the below. 
 
-Use [shortcodes](http://support.wordpress.com/shortcodes/) to embed your backroom widget in any post or page. 
+<?php backroom_widget( 'publisher_key=YOURWEBSITEDOMAIN' ); ?> 
 
-Usage:
+Remember to replace YOURWEBSITEDOMAIN with the name of your blog (without http:// or www). So, for example, in case of http://blog.backroomapp.com, it will look like below.
 
-`[backroom publisher_key="3e37fd3a541c59f34c7daaa1b7e0f797"]`
+<?php backroom_widget( 'publisher_key=blog.backroomapp.com' ); ?> 
 
-Arguments provides by the shortcode:
-
-* 'publisher_key' Your publisher key generated from backroomapp.com (http://backroomapp.com)
-
-= With custom code =
-
-Usage:
-`<?php backroom_widget( $args ); ?>`
-
-Params:
-$args could be:
-
-* 'publisher_key' Your publisher key generated from backroomapp.com (http://backroomapp.com)
-
-Example:
-`<?php backroom_widget( 'publisher_key=3e37fd3a541c59f34c7daaa1b7e0f797' ); ?>`
+If you want to see a screen shot, see the FAQ section where we have link to our detailed documentation.
 
 == Frequently Asked Questions ==
 
